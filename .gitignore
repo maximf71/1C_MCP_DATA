@@ -1,0 +1,5 @@
+/dist/
+/.integration/
+*.log
+.env
+.env.*

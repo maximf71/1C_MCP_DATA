@@ -1,0 +1,9 @@
+{
+  "name": "MCPData_АдминистрированиеMCP",
+  "synonym": "Администрирование MCP",
+  "comment": "Диагностика безопасного доступа MCP к данным 1С.",
+  "includeInCommandInterface": true,
+  "useOneCommand": true,
+  "explanation": "Проверка версии, текущего пользователя, прав чтения и компилятора запросов.",
+  "content": ["DataProcessor.MCPData_ДиагностикаMCP"]
+}

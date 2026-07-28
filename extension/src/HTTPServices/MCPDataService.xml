@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<HTTPService uuid="a4f77c59-dccd-4679-a55a-32bc4ff27c90">
+		<Properties>
+			<Name>MCPDataService</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>MCP: доступ к данным</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>Безопасный HTTP-интерфейс только для чтения. Выполняется с правами текущего пользователя 1С.</Comment>
+			<RootURL>mcp-data</RootURL>
+			<ReuseSessions>AutoUse</ReuseSessions>
+			<SessionMaxAge>20</SessionMaxAge>
+		</Properties>
+		<ChildObjects>
+			<URLTemplate uuid="83225353-ded7-4b11-aac8-be015d193abf">
+				<Properties>
+					<Name>Информация</Name>
+					<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>Информация</v8:content></v8:item></Synonym>
+					<Comment/>
+					<Template>/info</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="f728d86c-214e-4e19-91de-705026c4a0cc">
+						<Properties>
+							<Name>GET</Name>
+							<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>GET</v8:content></v8:item></Synonym>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>ИнформацияGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="0ececde7-5878-47fa-ab39-c8c1d1fa53aa">
+				<Properties>
+					<Name>Метаданные</Name>
+					<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>Метаданные</v8:content></v8:item></Synonym>
+					<Comment/>
+					<Template>/metadata</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="442354d5-060a-4ca5-aa90-867214c67edd">
+						<Properties>
+							<Name>GET</Name>
+							<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>GET</v8:content></v8:item></Synonym>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>МетаданныеGET</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="b0d801ea-994d-49c1-a856-bf932ae6caf2">
+				<Properties>
+					<Name>Схема</Name>
+					<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>Схема запроса</v8:content></v8:item></Synonym>
+					<Comment/>
+					<Template>/schema</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="25506c6d-be40-43cc-8c05-643f16f948ea">
+						<Properties>
+							<Name>POST</Name>
+							<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>POST</v8:content></v8:item></Synonym>
+							<Comment/>
+							<HTTPMethod>POST</HTTPMethod>
+							<Handler>СхемаPOST</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="2d66d459-bc4d-4d10-a5cc-932cb762402a">
+				<Properties>
+					<Name>ПоследниеДокументы</Name>
+					<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>Последние документы</v8:content></v8:item></Synonym>
+					<Comment>Максимальная дата по всем доступным пользователю видам документов.</Comment>
+					<Template>/latest-documents</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="b66ac8fb-dd05-4ae8-9772-f41274340c2c">
+						<Properties>
+							<Name>GET</Name>
+							<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>GET</v8:content></v8:item></Synonym>
+							<Comment/>
+							<HTTPMethod>GET</HTTPMethod>
+							<Handler>ПоследниеДокументыGET</Handler>
+						</Properties>
+					</Method>
+					<Method uuid="6e466378-97e0-4e94-b0d1-4941446de83e">
+						<Properties>
+							<Name>POST</Name>
+							<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>POST</v8:content></v8:item></Synonym>
+							<Comment/>
+							<HTTPMethod>POST</HTTPMethod>
+							<Handler>ПоследниеДокументыPOST</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="30e3f88a-57f3-41d3-9787-7d36e20d0007">
+				<Properties>
+					<Name>ТабличнаяЧастьДокумента</Name>
+					<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>Табличная часть документа</v8:content></v8:item></Synonym>
+					<Comment>Чтение одной табличной части документа по UUID с правами текущего пользователя.</Comment>
+					<Template>/document-table-parts</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="fc184b2c-7415-429a-ad6f-54363355b997">
+						<Properties>
+							<Name>POST</Name>
+							<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>POST</v8:content></v8:item></Synonym>
+							<Comment/>
+							<HTTPMethod>POST</HTTPMethod>
+							<Handler>ТабличнаяЧастьДокументаPOST</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="f92ff3d4-46a0-44fe-b4ce-9d37f1b5e4ab">
+				<Properties>
+					<Name>ПроверкаЗапроса</Name>
+					<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>Проверка запроса</v8:content></v8:item></Synonym>
+					<Comment/>
+					<Template>/validate-query</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="5cf5d436-713a-4a94-a2a9-ca44e9c69626">
+						<Properties>
+							<Name>POST</Name>
+							<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>POST</v8:content></v8:item></Synonym>
+							<Comment/>
+							<HTTPMethod>POST</HTTPMethod>
+							<Handler>ПроверкаЗапросаPOST</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+			<URLTemplate uuid="39fe3005-e016-40ff-91aa-50bf1cdd985d">
+				<Properties>
+					<Name>Запрос</Name>
+					<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>Выполнение запроса</v8:content></v8:item></Synonym>
+					<Comment/>
+					<Template>/query</Template>
+				</Properties>
+				<ChildObjects>
+					<Method uuid="418467d6-2316-4ca9-aeca-9067551c2b74">
+						<Properties>
+							<Name>POST</Name>
+							<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>POST</v8:content></v8:item></Synonym>
+							<Comment/>
+							<HTTPMethod>POST</HTTPMethod>
+							<Handler>ЗапросPOST</Handler>
+						</Properties>
+					</Method>
+				</ChildObjects>
+			</URLTemplate>
+		</ChildObjects>
+	</HTTPService>
+</MetaDataObject>

@@ -1,0 +1,41 @@
+{
+  "title": "Диагностика MCP-доступа к данным",
+  "properties": { "autoTitle": false, "width": 78, "height": 28 },
+  "events": { "OnCreateAtServer": "ПриСозданииНаСервере" },
+  "elements": [
+    {
+      "group": "vertical",
+      "name": "ГруппаСостояние",
+      "title": "Состояние расширения",
+      "showTitle": true,
+      "children": [
+        { "input": "ВерсияПлатформыПоле", "path": "ВерсияПлатформы", "title": "Версия платформы", "readOnly": true },
+        { "input": "ВерсияРасширенияПоле", "path": "ВерсияРасширения", "title": "Версия расширения", "readOnly": true },
+        { "input": "ПользовательПоле", "path": "Пользователь", "title": "Текущий пользователь", "readOnly": true },
+        { "input": "ДоступныеОбъектыПоле", "path": "ДоступныеОбъекты", "title": "Объектов с правом чтения", "readOnly": true },
+        { "input": "КомпиляцияЗапросаПоле", "path": "КомпиляцияЗапроса", "title": "Проверка компилятора запросов", "readOnly": true }
+      ]
+    },
+    { "input": "РезультатДиагностикиПоле", "path": "РезультатДиагностики", "title": "Диагностический отчет", "multiLine": true, "height": 9, "readOnly": true, "horizontalStretch": true },
+    {
+      "autoCmdBar": "ФормаКоманднаяПанель",
+      "autofill": false,
+      "children": [
+        { "button": "ОбновитьКнопка", "command": "Обновить", "title": "Обновить диагностику", "defaultButton": true },
+        { "button": "ЗакрытьКнопка", "stdCommand": "Close", "title": "Закрыть" }
+      ]
+    }
+  ],
+  "attributes": [
+    { "name": "Объект", "type": "DataProcessorObject.MCPData_ДиагностикаMCP", "main": true },
+    { "name": "ВерсияПлатформы", "type": "string(50)" },
+    { "name": "ВерсияРасширения", "type": "string(20)" },
+    { "name": "Пользователь", "type": "string(150)" },
+    { "name": "ДоступныеОбъекты", "type": "decimal(10,0,nonneg)" },
+    { "name": "КомпиляцияЗапроса", "type": "string(100)" },
+    { "name": "РезультатДиагностики", "type": "string" }
+  ],
+  "commands": [
+    { "name": "Обновить", "title": "Обновить диагностику", "action": "ОбновитьОбработчик" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "DataProcessor",
+  "name": "MCPData_ДиагностикаMCP",
+  "synonym": { "ru": "Диагностика MCP-доступа к данным" },
+  "comment": "Локальная диагностика расширения без доступа к ОС, паролям и внешним процессам.",
+  "useStandardCommands": true,
+  "defaultForm": "Форма"
+}
